@@ -116,7 +116,9 @@ function App() {
       }
 
       if (row === 5 && answer !== solution) {
-        setModalMessage("Unfortunately, you lose. Try again!");
+        setModalMessage(
+          `Unfortunately, you lose. The word was ${solution}. Try again!`
+        );
         setGameLost(true);
       }
 

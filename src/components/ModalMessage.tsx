@@ -32,7 +32,7 @@ function ModalMessage({
       if (message.startsWith("Well played")) {
         setShow(true);
       }
-      if (message === "Unfortunately, you lose. Try again!") {
+      if (message.startsWith("Unfortunately, you lose.")) {
         setShow(true);
       }
     }
@@ -59,7 +59,7 @@ function ModalMessage({
           dangerouslySetInnerHTML={{ __html: message }}
         ></p>
         {(message.startsWith("Well played") ||
-          message === "Unfortunately, you lose. Try again!") && (
+          message.startsWith("Unfortunately, you lose.")) && (
           <div className="modal-btns">
             <button className="modal-btn" onClick={refreshPage}>
               Play again
